@@ -9,28 +9,28 @@
 
 ---
 
-## 📌 项目简介 / About
+ 📌 项目简介 / About
 
 基于 **Lending Club 2007–2014 年真实放贷数据**（50,000 条样本、31 个原始特征），构建一整套可落地的**申请评分卡（A卡）**：对贷款申请人的违约风险进行量化打分，并输出**通过 / 人工复核 / 拒绝**三档放贷决策。
 
 本项目不只是一个模型，而是一条**从原始数据到业务决策的完整流水线**：数据清洗与特征工程严格遵循 `fit/apply` 分离防止数据泄漏，分箱与 WOE/IV 编码在训练集上定边界，评分卡按业界 600/50 惯例换算，最终用风险分层与 Cut-off 校准直接生成可执行的审批策略。
 
-**英文一句话简介（可用于简历/作品集）**：*End-to-end application credit scorecard built on real Lending Club data — anti-leakage pipeline, WOE/IV feature selection, logistic regression, scorecard mapping (600/50 convention) and three-tier cutoff decisions, with OOT validation and ablation experiments.*
+*End-to-end application credit scorecard built on real Lending Club data — anti-leakage pipeline, WOE/IV feature selection, logistic regression, scorecard mapping (600/50 convention) and three-tier cutoff decisions, with OOT validation and ablation experiments.*
 
 ---
 
-## ✨ 核心亮点 / Highlights
+ ✨ 核心亮点 / Highlights
 
-1. **全链路防泄漏**：清洗 / 分箱 / WOE / IV / Cut-off 全部在训练集 `fit`，测试集仅 `apply`，杜绝信息泄露
-2. **IV 阈值敏感性分析**：测试 0.005~0.050 五个阈值并择优（CV AUC 提升 +0.0036）
-3. **业务衍生特征**：构造 5 个偿债压力维度指标，消融实验验证有效（AUC +0.0022）
-4. **可落地的审批决策**：三档 Cut-off 自动处理约 60% 申请，通过人群坏账率下降 60%
-5. **时间稳定性验证**：按 `issue_month` 做 OOT 外推验证（AUC = 0.7129），证明模型跨期稳定
-6. **多模型对比**：附 RandomForest / XGBoost 对比，验证逻辑回归在评分卡场景的工程优势
+1. 全链路防泄漏：清洗 / 分箱 / WOE / IV / Cut-off 全部在训练集 `fit`，测试集仅 `apply`，杜绝信息泄露
+2. IV 阈值敏感性分析：测试 0.005~0.050 五个阈值并择优（CV AUC 提升 +0.0036）
+3. 业务衍生特征：构造 5 个偿债压力维度指标，消融实验验证有效（AUC +0.0022）
+4. 可落地的审批决策：三档 Cut-off 自动处理约 60% 申请，通过人群坏账率下降 60%
+5. 时间稳定性验证：按 `issue_month` 做 OOT 外推验证（AUC = 0.7129），证明模型跨期稳定
+6. 多模型对比：附 RandomForest / XGBoost 对比，验证逻辑回归在评分卡场景的工程优势
 
 ---
 
-## 📊 关键结果 / Key Results
+📊 关键结果 / Key Results
 
 | 指标 | 数值 | 说明 |
 |------|------|------|
@@ -44,7 +44,7 @@
 
 ---
 
-## 📁 项目结构 / Structure
+📁 项目结构 / Structure
 
 ```
 credit_scoring/
@@ -72,7 +72,7 @@ credit_scoring/
 
 ---
 
-## 🚀 快速开始 / Quick Start
+🚀 快速开始 / Quick Start
 
 ```bash
 # 1. 克隆仓库
@@ -92,7 +92,7 @@ python main.py
 
 ---
 
-## 🔄 建模流程 / Pipeline
+🔄 建模流程 / Pipeline
 
 ```
 原始数据
@@ -109,24 +109,21 @@ python main.py
 
 ---
 
-## 🛠 技术栈 / Tech Stack
+🛠 技术栈 / Tech Stack
 
 - **Python 3.8+**
 - **pandas / numpy** — 数据处理
 - **scikit-learn** — 逻辑回归、随机森林、模型评估
 - **matplotlib / seaborn** — 可视化
-- *可选*: xgboost / lightgbm — 梯度提升模型对比
 
 ---
 
-## 👥 团队成员 / Authors
+👥 团队成员 / Authors
 
-- 作者1 — 建模 / 代码实现
-- 作者2 — （按需补充：数据分析 / 模型评估）
-- 作者3 — （按需补充：文档 / 汇报）
+
 
 ---
 
-## 📄 License
+ 📄 License
 
 MIT License — 仅用于学习与作品集展示。数据来自 Lending Club 公开数据集（2007-2014）。
