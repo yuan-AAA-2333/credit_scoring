@@ -1,0 +1,24 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ===== 项目内归档/临时文件（旧 PPT 制作中间件，不进仓库） =====
+archive/
+
+# Notebook 自动生成的参考脚本
+notebooks/_code_extract_reference.py
+
+# ===== IDE / 系统 =====
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 数据备份（如需保留大文件可取消注释） =====
+# data/raw/*.bak
