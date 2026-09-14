@@ -13,6 +13,7 @@
 
 基于 **Lending Club 2007–2014 年真实放贷数据**（50,000 条样本、31 个原始特征），构建一整套可落地的**申请评分卡（A卡）**：对贷款申请人的违约风险进行量化打分，并输出**通过 / 人工复核 / 拒绝**三档放贷决策。
 
+
 本项目不只是一个模型，而是一条**从原始数据到业务决策的完整流水线**：数据清洗与特征工程严格遵循 `fit/apply` 分离防止数据泄漏，分箱与 WOE/IV 编码在训练集上定边界，评分卡按业界 600/50 惯例换算，最终用风险分层与 Cut-off 校准直接生成可执行的审批策略。
 
 *End-to-end application credit scorecard built on real Lending Club data — anti-leakage pipeline, WOE/IV feature selection, logistic regression, scorecard mapping (600/50 convention) and three-tier cutoff decisions, with OOT validation and ablation experiments.*
